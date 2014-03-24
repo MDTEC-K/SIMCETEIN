@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head></h:head> 
+<body>
+    <rich:panel>
+        <f:facet name="header">
+        <h:form>
+        <h:panelGrid columns="5">
+        <h:outputLabel value="Usuario" />
+        <h:inputText value="" />
+        <h:outputLabel value="Password" />
+        <h:inputText value="" />
+        <h:commandButton action="" value="Ingresar">
+        <rich:componentControl target="popup_licencia" operation="show" />
+        </h:commandButton>
+        </h:panelGrid>
+        </h:form>
+        </f:facet>
+		<h:form>
+		<h:panelGrid columns="2">
+        <h:outputLabel value="Ingrese licencia" />
+        <h:inputText value="" />
+        <h:outputLabel value="Ingrese su correo" />
+        <h:inputText value="" />
+        <h:commandButton action="" value="Ingresar" />
+        </h:panelGrid>
+		</h:form>
+	</rich:panel>
+	
+	<rich:popupPanel id="popup_licencia" modal="true" autosized="true" resizeable="false">
+        <f:facet name="header">
+            <h:outputText value="Aviso" />
+        </f:facet>
+        <f:facet name="controls">
+            <h:outputLink value="#" onclick="#{rich:component('popup_licencia')}.hide(); return false;">
+                X
+            </h:outputLink>
+        </f:facet>
+        <p>Su usuario y password han sido enviados a su correo</p>
+    </rich:popupPanel>
+	
+</body> 
+</html>
