@@ -22,16 +22,22 @@
 		
 		<h:panelGrid columns="2">
 		<h:outputLabel value="Elije tu numero de telefono" />
-		<h:inputText value="#{appController.numero}" />
+		<h:selectOneMenu value="#{appController.numero}">
+                <f:selectItem itemValue="0" itemLabel="7501144" />
+                <f:selectItem itemValue="1" itemLabel="7501146" />
+                <f:selectItem itemValue="2" itemLabel="7501147" />
+                <f:selectItem itemValue="3" itemLabel="7501148" />
+                <f:selectItem itemValue="4" itemLabel="7501149" />
+                
+            </h:selectOneMenu>
 		<h:outputLabel value="El costo por el numero es" />
-		<h:inputTextarea value="#{appController.precio}" />
+		<h:inputText id="precio" value="#{appController.numero}" />
 		</h:panelGrid>
 		
-		<f:facet name="footer">
 		<h:commandButton action="#{appController.irPaso2()}" value="Enviar" />
-		</f:facet>
+		</h:form>
 		
-		</h:form> 
+		
 	</rich:panel>
 </body> 
 </html>

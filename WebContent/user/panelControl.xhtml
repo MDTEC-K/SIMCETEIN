@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head></h:head> 
+<body>
+    <rich:panel>
+        <f:facet name="header">
+        Panel de Control
+        </f:facet>
+		<table width="100%">
+		<tr>
+		<td width="50%">
+		<rich:panel style="height: 250px">
+		<f:facet name="header">
+		Información General
+		</f:facet>
+		<img src="../../resources/img/user.png" />
+		</rich:panel>
+		</td>
+		<td width="50%">
+		<rich:panel style="height: 250px">
+		<f:facet name="header">
+		Reportes de Consumo
+		</f:facet>
+		<h:outputLabel value="Minutos Consumidos en el mes" />
+		<br></br>
+		<img src="../../resources/img/chart.png" />
+		</rich:panel>
+		</td>
+		</tr>
+		<tr>
+		<td colspan="2">
+		<rich:panel style="height: 250px">
+		<f:facet name="header">
+		Configuración
+		</f:facet>
+		<h:form>
+        <rich:dataTable value="#{appController.anexos}" var="a" id="table" rows="20" rowClasses="odd-row, even-row"
+            styleClass="stable" iterationStatusVar="it">
+            <rich:column>
+                <f:facet name="header">
+                    <h:outputText value="#" />
+                </f:facet>
+                #{it.index}
+            </rich:column>
+            <rich:column>
+                <f:facet name="header">
+                    <h:outputText value="Número Anexo" />
+                </f:facet>
+                <h:inputText value="#{a.numero}" />
+            </rich:column>
+            <rich:column>
+                <f:facet name="header">
+                    <h:outputText value="Usuario" />
+                </f:facet>
+                <h:inputText value="#{a.usuario}" />
+            </rich:column>
+            <rich:column>
+                <f:facet name="header">
+                    <h:outputText value="Mac" />
+                </f:facet>
+                <h:inputText value="#{a.mac}" />
+            </rich:column>
+            <rich:column>
+                <f:facet name="header">
+                    <h:outputText value="Costo Adicional" />
+                </f:facet>
+                <h:inputText value="#{a.costoAdicional}" />
+            </rich:column>
+            <rich:column>
+                <a4j:commandLink value="#{a.operacion}" action="#{appController.addOrDelete()}" render="table">
+                <a4j:param value="#{it.index}" assignTo="#{appController.index}" />
+                <f:setPropertyActionListener target="#{appController.operacion}" value="#{a.operacion}" />
+                </a4j:commandLink>
+            </rich:column>
+        </rich:dataTable>
+        
+        <h:commandButton action="#{appController.irPaso3()}" value="Enviar" />
+        
+		</h:form>
+		</rich:panel>
+		</td>
+		</tr>
+		</table> 
+	</rich:panel>
+</body> 
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head>
+<script src="../../resources/jquery.min.js" type="text/javascript"></script> 
+</h:head> 
+<body>
+    <rich:panel>
+        <f:facet name="header">
+        Paso3
+        </f:facet>
+        <h4>Configure su bolsa de Pago</h4>
+		<h:form>
+		
+		<table>
+		<tr>
+		<td><img class="checkimg" src="../../resources/img/paquete1.png" /></td>
+		<td><input type="checkbox" /></td>
+		<td><img class="checkimg" src="../../resources/img/paquete2.png" /></td>
+		<td><input type="checkbox" /></td>
+		<td><img class="checkimg" src="../../resources/img/paquete3.png" /></td>
+		<td><input type="checkbox" /></td>
+		</tr>
+		</table>
+
+		<div class="rf-p " style="height: 60px;" id="descripcion">
+		
+		</div>
+		<h:commandButton action="#{appController.irContrato()}" value="Siguiente" />
+		</h:form>
+	</rich:panel>
+</body>
+<script>
+$("img").hover(function(){
+	$("#descripcion").html("Descripción del paquete sombreado");
+}, function(){
+	$("#descripcion").html("");
+});
+</script>
+</html>

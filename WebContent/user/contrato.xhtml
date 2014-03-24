@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head></h:head> 
+<body>
+    <rich:panel>
+        <f:facet name="header">
+        Contrato
+        </f:facet>
+        <h:form>
+        
+		<rich:panel>
+		<p>
+		Resumen de todo lo que se ha adquirido.
+		</p>
+		<p>
+		PLAN A
+		</p>
+		<p>
+		Número de Anexos adquieridos:
+		</p>
+		<p>
+		5 Anexos con costo de 50 adicionales al plan
+		</p>
+		<p>
+		Paquetes Adicionales Adquiridos:
+		</p>
+		<p>
+		Bolsa de 500 minutos adicional con costo de 50 adicionales al plan 
+		</p>
+		
+		<p>
+		El costo total por los servicios deseados es de 500 Nuevos Soles Mensuales.
+		</p>
+		</rich:panel> 
+		
+		<h:selectManyCheckbox>
+		<f:selectItem itemLabel="Acepto los términos y condiciones indicados en el presente contrato"/>
+		</h:selectManyCheckbox>
+		
+		<h:commandButton action="#{appController.irPanel()}" value="Finalizar" />
+		
+		</h:form>
+	</rich:panel>
+</body> 
+</html>

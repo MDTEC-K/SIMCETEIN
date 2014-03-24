@@ -13,12 +13,10 @@
         <h:form>
         <h:panelGrid columns="5">
         <h:outputLabel value="Usuario" />
-        <h:inputText value="" />
+        <h:inputText value="#{appController.username}" />
         <h:outputLabel value="Password" />
-        <h:inputText value="" />
-        <h:commandButton action="" value="Ingresar">
-        <rich:componentControl target="popup_licencia" operation="show" />
-        </h:commandButton>
+        <h:inputText value="#{appController.password}" />
+        <h:commandButton action="#{appController.irPaso1()}" value="Ingresar" />
         </h:panelGrid>
         </h:form>
         </f:facet>
@@ -28,7 +26,9 @@
         <h:inputText value="" />
         <h:outputLabel value="Ingrese su correo" />
         <h:inputText value="" />
-        <h:commandButton action="" value="Ingresar" />
+        <h:commandButton value="Enviar">
+        <rich:componentControl target="popup_licencia" operation="show" />
+        </h:commandButton>
         </h:panelGrid>
 		</h:form>
 	</rich:panel>
